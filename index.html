@@ -6,46 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link href="estilos/estilo.css" rel="stylesheet"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
- rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Gerador de senha PAY</title>
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/dist/js/bootstrap.js"></script>
+    <title>Gerador de senha Webposto Pay</title>
 </head>
+
 <body>
-    <h1>Gerador de senha PAY</h1>
+    <h1>Gerador de senha Webposto Pay</h1>
     
-
+    
     <div id="div1" class="card-body">
-      
-        <textarea id="textArea" hidden>
-
+        <textarea id="textArea" hidden > </textarea>
+        <button type="button" class="btn btn-primary btn-lg" onclick="copyToClipBoard()" id="botao" > 
+            <script> 
             
-        </textarea>  
+            var ndata = new Date
+            var dia = ndata.getDate();
+            var mes = ndata.getMonth()+1;
+            var ano = ndata.getFullYear();
+            var hora = ndata.getHours();
+            var gmt = 3
+            var senha = ano-mes-dia-hora-gmt
 
-        <button type="button" class="btn btn-primary btn-lg" onclick="copyToClipBoard()" id="botao" >
-            <script>
-                var ndata = new Date
-                var dia = ndata.getDate();
-                var mes = ndata.getMonth()+2;
-                var ano = ndata.getFullYear();
-                var hora = ndata.getHours();
-                var gmt = 3
-                var senha = ano-mes-dia-hora-gmt
-             document.getElementById("textArea").innerHTML = senha
-             document.getElementById("botao").innerHTML = senha
+ document.getElementById("textArea").innerHTML = senha
+ document.getElementById("botao").innerHTML = senha
 
-            function copyToClipBoard() {
-                var content = document.getElementById('textArea');
-                alert("Aí sim chefia, copiado!"); 
-                }
-   
+function copyToClipBoard() {
+    navigator.clipboard.writeText(senha);
+    alert("Aí sim chefia, copiado!"); 
+    }
+            
+            
             </script>
-    
-        </button>
         
-
+        </button>    
     </div>
 
-
+  
+    
     <footer class="footer">
         © Paulo Vieira
     </footer>

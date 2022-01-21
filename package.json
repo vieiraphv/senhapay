@@ -1,0 +1,9 @@
+{
+  "name": "senhapay",
+  "version": "1.0.0",
+  "description": "gerador de senha para o webposto pay",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
