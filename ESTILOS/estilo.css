@@ -1,26 +1,28 @@
-
-div {
+#div1 {
     color: rgb(255, 255, 255);
     background-color: rgb(107, 34, 175);
     text-align: center;
     align-items: center;
     align-content: center;
-    height: 150px;
-    width: 150px;
-    size: 150px;
+    height: 200px;
+    width: 200px;
+    size: 300px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 50px;
+    font-size: 15 px;
     font-family: 'Calibri';
     font-weight: bold;
     display: flex;
     justify-content: center;
     border-radius: 10%;
     position: relative;
-
     animation-name: quadrado;
     animation-duration: 2s;
     animation-delay: -1s;
+    margin-bottom: 10px;
+
+
+
     }
 
 
@@ -28,7 +30,6 @@ div {
     h1{
         
             color: rgb(255, 255, 255);
-            background-color: rgb(35, 34, 36);
             text-align: center;
             align-content: center;
             height: 150pp;
@@ -40,23 +41,82 @@ div {
     }
 
     body{
-        background-color: rgb(35, 34, 36);
+        background-color: rgb(32, 32, 32);
+        background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+        background-size: 10px 10px, 10px 10px, 10px 5px;
+        background-position: 0px 0px, 5px 5px, 0px 0px;
     }
 
 
-    
-    footer {
-        color: rgb(255, 255, 255);
-        text-align: bottom;
-        align-items: center;
-        align-content: center;
-        display: flex;
-        justify-content: center;
-        font-family: 'Calibri';
-        margin-top: 10px;
-        
-        }
 
+
+
+
+
+    #btn {
+        color: #FFF;
+        transition: all 0.5s;
+        position: relative;	
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        position: block;
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 150px;
+        height: 40px;
+        width: 250px;
+        animation-name: btanim1;
+        animation-duration: 5s;
+    
+    }
+
+    #btn span {
+        z-index: 2;	
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;	
+    }
+    #btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(51, 46, 53, 0.186)
+    }
+    #btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(51, 46, 53, 0.186)
+    }
+    #btn:hover::before {
+      transform: rotate(-45deg);
+      background-color: rgba(51, 46, 53, 0.186)
+    }
+    #btn:hover::after {
+      transform: rotate(45deg);
+      background-color: rgba(51, 46, 53, 0.186)
+    }
+
+         
 
 
     @keyframes quadrado {
@@ -66,3 +126,93 @@ div {
        
         100% {background-color:rgb(107, 34, 175); left:0px; top:0px;}
       }
+
+      @keyframes btanim1 {
+        0%   {left:0px; top:0px;}
+        
+        50%  { left:0px; top:200px;}
+       
+        100% { left:0px; top:0px;}
+      }
+
+
+
+
+
+
+
+
+
+     #btn1 {
+        color: #FFF;
+        transition: all 0.3s;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 70px;
+        justify-items: center;
+        align-items: center;
+        height: 40px;
+        width: 250px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        font-size: 20px;
+
+        animation-name: btanim1;
+        animation-duration: 3s;
+        
+    }
+    #btn1 span {
+        transition: all 0.3s;
+        margin-top: 20px;
+    }
+    #btn1::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-top-style:solid;
+        border-bottom-style: solid;
+        border-top-color: rgba(255,255,255,0.5);
+        border-bottom-color: rgba(255,255,255,0.5);
+        transform: scale(0.1, 1);
+
+
+
+        
+    }
+    #btn1:hover span {
+        letter-spacing: 2px;
+        
+    }
+    #btn1:hover::before {
+        opacity: 1;	
+        transform: scale(1, 1);
+       
+
+
+    }
+    #btn1::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.3s;
+        background-color: rgba(51, 46, 53, 0.186)
+    }
+    #btn1:hover::after {
+        opacity: 0;	
+        transform: scale(0.1, 1);
+    }
